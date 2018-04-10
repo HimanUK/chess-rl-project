@@ -8,7 +8,7 @@ import random
 
 board = chess.Board()
 
-for i in range(40):
+while True:
     print(board)
     
     lgmov = list(board.legal_moves)
@@ -18,6 +18,9 @@ for i in range(40):
     
     now_move = chess.Move.from_uci(mov)
     board.push(now_move)
+    
+    if board.is_game_over():
+        break
     
     print('--------------------------------------- \n')
     
